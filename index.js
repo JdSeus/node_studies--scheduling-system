@@ -20,6 +20,10 @@ mongoose.connect("mongodb://localhost:27017/agendamento", {useNewUrlParser: true
 app.get("/", (req, res) => {
     res.send("Oi!");
 });
+
+app.get("/cadastro", (req, res) => {
+    res.render("create");
+})
 //END Routes
 
 
