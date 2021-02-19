@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+const AppointmentService = require("./services/AppointmentService");
+
 
 //Configs
 app.use(express.static("public"));
@@ -23,6 +25,24 @@ app.get("/", (req, res) => {
 
 app.get("/cadastro", (req, res) => {
     res.render("create");
+})
+
+app.post("/create", async (req, res) => {
+
+    var status = await AppointmentService.Create(
+        req.body.name,
+        req.body.email,
+        req.body.description,
+        req.body.cpf,
+        req.body.date,
+        req.body.time,
+        );
+
+        if(status) {
+            res.redirect("/");
+        } else {
+            res.send("Ocorreu uma falha!");
+        }
 })
 //END Routes
 
