@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema</title>
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="FullCalendar/main.css">
+</head>
+<body>
+    <div id="calendar">
+
+    </div>
+</body>
+<script src="Bootstrap/jquery-3.5.1.slim.min.js"></script>
+<script src="Bootstrap/popper.min.js"></script>
+<script src="Bootstrap/bootstrap.min.js"></script>
+<script src="FullCalendar/main.min.js"></script>
+<script>
+    var element = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(element, {
+        initialView: 'dayGridMonth',
+        locale: 'pt-br'
+    });
+
+    calendar.render();
+</script>
+</html>
