@@ -33,6 +33,14 @@ class AppointmentService {
         }
     }
 
+    async GetAll(showFinished) {
+        if(showFinished) {
+            return await Appo.find();
+        } else {
+            return await Appo.find({'finished': false});
+        }
+    }
+
     CheckParamsVoid(params) {
         var voids = 0;
         params.forEach(element => {

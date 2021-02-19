@@ -44,6 +44,14 @@ app.post("/create", async (req, res) => {
             res.send("Ocorreu uma falha!");
         }
 })
+
+app.get("/getcalendar", async (req, res) => {
+
+    var consultas = await AppointmentService.GetAll(false);
+    res.json(consultas);
+    
+});
+
 //END Routes
 
 
