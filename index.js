@@ -64,6 +64,11 @@ app.post("/finish", async (req, res) => {
     res.redirect("/");
 });
 
+app.get("/list", async (req, res) => {
+   var appos = await AppointmentService.GetAll(true);
+   res.render("list", {appos});
+});
+
 //END Routes
 
 
