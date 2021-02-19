@@ -10,14 +10,14 @@ class AppointmentFactory {
         var hour = Number.parseInt(simpleAppointment.time.split(":")[0]);
         var minutes = Number.parseInt(simpleAppointment.time.split(":")[1]);
 
+        var a = new Date(year,)
         var startDate = new Date(year, month, day, hour, minutes, 0 , 0);
-        startDate.setHours(startDate.getHours() - 3);
 
         var appo = {
             id: simpleAppointment._id,
             title: simpleAppointment.name + " - " + simpleAppointment.description,
             start: startDate,
-            end: startDate
+            end: startDate,
         }
 
         return appo;
