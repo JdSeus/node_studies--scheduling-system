@@ -13,7 +13,7 @@
     <form>
         <input class="form-control" type="text" name="name" id="name" placeholder="Nome do paciente">
         <input class="form-control" type="email" name="email" id="email" placeholder="email@email.com">
-        <input class="form-control" type="text" name="cpf" id="cpf" placeholder="CPF">
+        <input class="cpf form-control" type="text" name="cpf" id="cpf" placeholder="CPF">
         <input class="form-control" type="text" name="description" id="description" placeholder="Descrição">
         <input class="form-control" type="date" name="date" id="date">
         <input class="form-control" type="time" name="time" id="time">
@@ -23,4 +23,9 @@
 <script src="Bootstrap/jquery-3.5.1.slim.min.js"></script>
 <script src="Bootstrap/popper.min.js"></script>
 <script src="Bootstrap/bootstrap.min.js"></script>
+<script src="JQueryMaskPlugin/jquery.mask.min.js"></script>
+
+<script>
+    $('.cpf').mask('000.000.000-00');
+</script>
 </html>
