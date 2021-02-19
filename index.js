@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 mongoose.connect("mongodb://localhost:27017/agendamento", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set('useFindAndModify', false);
 //END Configs
 
 
@@ -55,6 +56,12 @@ app.get("/getcalendar", async (req, res) => {
 app.get("/event/:id", async (req, res) => {
     var appointment = await AppointmentService.GetById(req.params.id);
     res.render("event", {appo: appointment});
+});
+
+app.post("/finish", async (req, res) => {
+    var id = req.body.id;
+    var result = await AppointmentService.Finish(id);
+    res.redirect("/");
 });
 
 //END Routes
