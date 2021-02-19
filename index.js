@@ -76,5 +76,11 @@ app.get("/searchresult", async (req, res) => {
 
 //END Routes
 
+var pollTime = 1 * 60000;
+
+setInterval(() => {
+    console.log("A task rodou");
+}, pollTime)
+
 
 app.listen(8080, () => {});
