@@ -76,10 +76,10 @@ app.get("/searchresult", async (req, res) => {
 
 //END Routes
 
-var pollTime = 1 * 60000;
+var pollTime = 5000;
 
-setInterval(() => {
-    console.log("A task rodou");
+setInterval(async () => {
+    await AppointmentService.SendNotification();
 }, pollTime)
 
 
